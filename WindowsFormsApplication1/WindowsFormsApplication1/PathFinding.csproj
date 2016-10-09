@@ -55,7 +55,6 @@
     <Compile Include="SwithButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ComboItem.cs" />
     <Compile Include="PathFinding.cs">
       <SubType>Form</SubType>
     </Compile>
