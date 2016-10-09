@@ -1,0 +1,5 @@
+D:\Formation WCF\_InstallEntity\Pathfinding\PathfindingLib\bin\Release\PathfindingLib.dll
+D:\Formation WCF\_InstallEntity\Pathfinding\PathfindingLib\bin\Release\PathfindingLib.pdb
+D:\Formation WCF\_InstallEntity\Pathfinding\PathfindingLib\obj\Release\PathfindingLib.csprojResolveAssemblyReference.cache
+D:\Formation WCF\_InstallEntity\Pathfinding\PathfindingLib\obj\Release\PathfindingLib.dll
+D:\Formation WCF\_InstallEntity\Pathfinding\PathfindingLib\obj\Release\PathfindingLib.pdb

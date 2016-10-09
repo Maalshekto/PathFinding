@@ -1,0 +1,8 @@
+D:\Formation WCF\_InstallEntity\Pathfinding\Projet1\bin\Debug\Projet1.exe.config
+D:\Formation WCF\_InstallEntity\Pathfinding\Projet1\bin\Debug\Projet1.exe
+D:\Formation WCF\_InstallEntity\Pathfinding\Projet1\bin\Debug\Projet1.pdb
+D:\Formation WCF\_InstallEntity\Pathfinding\Projet1\bin\Debug\PathfindingLib.dll
+D:\Formation WCF\_InstallEntity\Pathfinding\Projet1\bin\Debug\PathfindingLib.pdb
+D:\Formation WCF\_InstallEntity\Pathfinding\Projet1\obj\Debug\Projet1.csprojResolveAssemblyReference.cache
+D:\Formation WCF\_InstallEntity\Pathfinding\Projet1\obj\Debug\Projet1.exe
+D:\Formation WCF\_InstallEntity\Pathfinding\Projet1\obj\Debug\Projet1.pdb
