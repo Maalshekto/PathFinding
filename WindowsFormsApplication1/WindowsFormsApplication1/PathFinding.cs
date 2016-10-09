@@ -160,8 +160,9 @@ namespace WindowsFormsApplication1
                 MapButton tile = mapUserInterface.getMapButtonsList()[i[1], i[0]];
                 mapUserInterface.pushTile(tile);
                 
-                UIWait(250);
+                
                 cost += tile.colorToCost();
+                UIWait(250 * tile.colorToCost());
                 costLabel.Text = "Cost : " + cost;
                 this.Refresh();
                 
