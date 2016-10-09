@@ -9,9 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Threading;
 using System.Threading;
 using System.Windows.Forms;
+using System.IO;
 using PathfindingLib;
 using PathfindingLib.MapSolution;
 using PathfindingLib.Algorithms;
+using System.Media;
+using System.Diagnostics;
 
 
 
@@ -68,6 +71,31 @@ namespace WindowsFormsApplication1
             Dispatcher.PushFrame(frame);
         }
 
+        private void playYesSound()
+        {
+            string[] soundsList = {
+                                      @"\sound\FootmanYes1.wav",
+                                      @"\sound\FootmanYes2.wav",
+                                      @"\sound\FootmanYes3.wav",
+                                      @"\sound\FootmanYes4.wav"
+                                  };
+            Random rnd = new Random();
+            string sound = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName)  + soundsList[rnd.Next(4)];
+            SoundPlayer simpleSound = new SoundPlayer(sound);
+            simpleSound.Play();
+        }
+
+        private void playErrorSound()
+        {
+            string errorSound = @"\sound\error.wav";
+                                  
+            Random rnd = new Random();
+            string sound = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + errorSound;
+            SoundPlayer simpleSound = new SoundPlayer(sound);
+            simpleSound.Play();
+        }
+
+
 
         private void generateMap(int length, int height, String str)
         {
@@ -118,9 +146,11 @@ namespace WindowsFormsApplication1
             LinkedList<int[]> list = map.ReconstructPathList();
             if (list.Count == 1)
             {
+                playErrorSound();
                 costLabel.Text = "Cost : infinity";
                 return;
             }
+            playYesSound();
             drawingInProgress = true;
             list.RemoveFirst();
             
@@ -266,6 +296,7 @@ namespace WindowsFormsApplication1
                 {
                     drawingInProgress = false;
                 }
+                
                 MapButton but = (MapButton)sender;
                 mapUserInterface.setEndPoint(but.getPosY(), but.getPosX());
                 startPathFind();

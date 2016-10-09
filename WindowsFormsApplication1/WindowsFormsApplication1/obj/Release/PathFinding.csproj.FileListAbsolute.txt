@@ -19,14 +19,14 @@ C:\Users\Thomas\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\bi
 C:\Users\Thomas\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\PathfindingLib.pdb
 C:\Users\Thomas\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe
 C:\Users\Thomas\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.pdb
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\PathFindingDemo.exe.config
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\PathFindingDemo.exe
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\PathFindingDemo.pdb
 C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\PathfindingLib.dll
 C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\PathfindingLib.pdb
 C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\PathFinding.csprojResolveAssemblyReference.cache
 C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.PathFinding.resources
-C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\PathFinding.csproj.GenerateResource.Cache
-C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\PathFindingDemo.exe.config
-C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\PathFindingDemo.exe
-C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\PathFindingDemo.pdb
 C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\PathFindingDemo.Properties.Resources.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\PathFinding.csproj.GenerateResource.Cache
 C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\PathFindingDemo.exe
 C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\PathFindingDemo.pdb

@@ -8,3 +8,7 @@ C:\Users\Thomas\Pathfinding\Pathfinding\PathfindingLib\bin\Release\PathfindingLi
 C:\Users\Thomas\Pathfinding\Pathfinding\PathfindingLib\obj\Release\PathfindingLib.csprojResolveAssemblyReference.cache
 C:\Users\Thomas\Pathfinding\Pathfinding\PathfindingLib\obj\Release\PathfindingLib.dll
 C:\Users\Thomas\Pathfinding\Pathfinding\PathfindingLib\obj\Release\PathfindingLib.pdb
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\Pathfinding\PathfindingLib\bin\Release\PathfindingLib.dll
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\Pathfinding\PathfindingLib\bin\Release\PathfindingLib.pdb
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\Pathfinding\PathfindingLib\obj\Release\PathfindingLib.dll
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Pathfinding\Pathfinding\PathfindingLib\obj\Release\PathfindingLib.pdb
