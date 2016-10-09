@@ -19,6 +19,8 @@ namespace WindowsFormsApplication1
         private MapButton[,] mapButtonsList;
         char[,] matrix;
 
+        public const string CHARACTER_MOBILE = "\u265C";
+
         public PathFinding mother { get; set; }
         public MapUI(PathFinding mum, int l, int h)
         {
@@ -121,14 +123,16 @@ namespace WindowsFormsApplication1
 
         public void pushTile(MapButton tile)
         {
-            tile.Text = "\u25CF";
+            start.Text = "";
+            tile.Text = CHARACTER_MOBILE;
+            start = tile;
         }
 
         public void clearTiles()
         {
             foreach (MapButton tile in getMapButtonsList())
             {
-                if (tile.Text != "S" && tile.Text != "E")
+                if (tile.Text != CHARACTER_MOBILE)
                 {
                     tile.Text = "";
                 }
@@ -154,21 +158,16 @@ namespace WindowsFormsApplication1
             {
                 return;
             }
-            start = getMapButtonsList()[Y, X];
-            start.Text = "S"; 
+            start = getMapButtonsList()[X, Y];
+            start.Text = CHARACTER_MOBILE; 
         }
         public void setEndPoint(int X, int Y)
         {
-            if (end != null)
-            {
-                end.Text = "";
-            }
-            if (X > mapButtonsList.GetLength(1) || Y > mapButtonsList.GetLength(0))
+            if (X > mapButtonsList.GetLength(0) || Y > mapButtonsList.GetLength(1))
             {
                 return;
             }
-            end = getMapButtonsList()[Y, X];
-            end.Text = "E"; 
+            end = getMapButtonsList()[X, Y];
         }
     }
 }

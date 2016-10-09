@@ -30,7 +30,6 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.validate01 = new System.Windows.Forms.Button();
             this.lengthNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.heightNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.generateMapButton = new System.Windows.Forms.Button();
@@ -40,10 +39,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.numericUpDownXStart = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownYStart = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDownXEnd = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownYEnd = new System.Windows.Forms.NumericUpDown();
             this.algorithmChoice = new System.Windows.Forms.GroupBox();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
@@ -55,8 +50,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.heightNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownXStart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYStart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownXEnd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYEnd)).BeginInit();
             this.algorithmChoice.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,18 +74,6 @@
             this.button2.Text = "Matrix 20*10";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // validate01
-            // 
-            this.validate01.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.validate01.Location = new System.Drawing.Point(435, 556);
-            this.validate01.Name = "validate01";
-            this.validate01.Size = new System.Drawing.Size(151, 60);
-            this.validate01.TabIndex = 4;
-            this.validate01.Text = "Find Path";
-            this.validate01.UseVisualStyleBackColor = true;
-            this.validate01.Visible = false;
-            this.validate01.Click += new System.EventHandler(this.validate01_Click);
             // 
             // lengthNumericUpDown
             // 
@@ -201,56 +182,6 @@
             this.numericUpDownYStart.Visible = false;
             this.numericUpDownYStart.ValueChanged += new System.EventHandler(this.numericUpDownYStart_ValueChanged);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(139, 556);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 19);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "End X";
-            this.label5.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(139, 586);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 19);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "End Y";
-            this.label6.Visible = false;
-            // 
-            // numericUpDownXEnd
-            // 
-            this.numericUpDownXEnd.Location = new System.Drawing.Point(195, 556);
-            this.numericUpDownXEnd.Name = "numericUpDownXEnd";
-            this.numericUpDownXEnd.Size = new System.Drawing.Size(37, 20);
-            this.numericUpDownXEnd.TabIndex = 16;
-            this.numericUpDownXEnd.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownXEnd.Visible = false;
-            this.numericUpDownXEnd.ValueChanged += new System.EventHandler(this.numericUpDownXEnd_ValueChanged);
-            // 
-            // numericUpDownYEnd
-            // 
-            this.numericUpDownYEnd.Location = new System.Drawing.Point(193, 587);
-            this.numericUpDownYEnd.Name = "numericUpDownYEnd";
-            this.numericUpDownYEnd.Size = new System.Drawing.Size(37, 20);
-            this.numericUpDownYEnd.TabIndex = 17;
-            this.numericUpDownYEnd.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownYEnd.Visible = false;
-            this.numericUpDownYEnd.ValueChanged += new System.EventHandler(this.numericUpDownYEnd_ValueChanged);
-            // 
             // algorithmChoice
             // 
             this.algorithmChoice.Controls.Add(this.radioButton5);
@@ -258,7 +189,7 @@
             this.algorithmChoice.Controls.Add(this.radioButton3);
             this.algorithmChoice.Controls.Add(this.radioButton2);
             this.algorithmChoice.Controls.Add(this.radioButton1);
-            this.algorithmChoice.Location = new System.Drawing.Point(238, 548);
+            this.algorithmChoice.Location = new System.Drawing.Point(126, 548);
             this.algorithmChoice.Name = "algorithmChoice";
             this.algorithmChoice.Size = new System.Drawing.Size(164, 68);
             this.algorithmChoice.TabIndex = 18;
@@ -321,24 +252,20 @@
             // 
             this.costLabel.AutoSize = true;
             this.costLabel.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.costLabel.Location = new System.Drawing.Point(606, 565);
+            this.costLabel.Location = new System.Drawing.Point(311, 560);
             this.costLabel.Name = "costLabel";
             this.costLabel.Size = new System.Drawing.Size(85, 37);
             this.costLabel.TabIndex = 19;
             this.costLabel.Text = "Cost : ";
             this.costLabel.Visible = false;
             // 
-            // Form1
+            // PathFinding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 628);
             this.Controls.Add(this.costLabel);
             this.Controls.Add(this.algorithmChoice);
-            this.Controls.Add(this.numericUpDownYEnd);
-            this.Controls.Add(this.numericUpDownXEnd);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.numericUpDownYStart);
             this.Controls.Add(this.numericUpDownXStart);
             this.Controls.Add(this.label4);
@@ -348,17 +275,14 @@
             this.Controls.Add(this.generateMapButton);
             this.Controls.Add(this.heightNumericUpDown);
             this.Controls.Add(this.lengthNumericUpDown);
-            this.Controls.Add(this.validate01);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "PathFinding";
-            this.Text = "PathFinding";
+            this.Name = "PathFinding Demo";
+            this.Text = "PathFinding Demo";
             ((System.ComponentModel.ISupportInitialize)(this.lengthNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownXStart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYStart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownXEnd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYEnd)).EndInit();
             this.algorithmChoice.ResumeLayout(false);
             this.algorithmChoice.PerformLayout();
             this.ResumeLayout(false);
@@ -373,7 +297,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private MapUI mapUserInterface;
-        private System.Windows.Forms.Button validate01;
         private System.Windows.Forms.NumericUpDown lengthNumericUpDown;
         private System.Windows.Forms.NumericUpDown heightNumericUpDown;
         private System.Windows.Forms.Button generateMapButton;
@@ -383,10 +306,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numericUpDownXStart;
         private System.Windows.Forms.NumericUpDown numericUpDownYStart;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDownXEnd;
-        private System.Windows.Forms.NumericUpDown numericUpDownYEnd;
         private System.Windows.Forms.GroupBox algorithmChoice;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton4;
