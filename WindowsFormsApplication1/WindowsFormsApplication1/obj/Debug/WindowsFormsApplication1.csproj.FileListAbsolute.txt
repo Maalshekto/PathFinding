@@ -1,0 +1,11 @@
+D:\Formation WCF\_InstallEntity\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+D:\Formation WCF\_InstallEntity\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\Formation WCF\_InstallEntity\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+D:\Formation WCF\_InstallEntity\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\PathfindingLib.dll
+D:\Formation WCF\_InstallEntity\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\PathfindingLib.pdb
+D:\Formation WCF\_InstallEntity\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+D:\Formation WCF\_InstallEntity\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\Formation WCF\_InstallEntity\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+D:\Formation WCF\_InstallEntity\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+D:\Formation WCF\_InstallEntity\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+D:\Formation WCF\_InstallEntity\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
