@@ -9,17 +9,18 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public class MapButton : SwitchButton
+    public class MapButton : Button
     {
         private int pos_x;
         private int pos_y;
         private MapUI motherMap;
        
-        public MapButton()
+        public MapButton(MapUI maman)
         {
+            motherMap = maman;
             pos_x = 0;
             pos_y = 0;
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.registerMatrix);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(motherMap.mother.registerMatrix);
         }
         public MapButton(int x, int y, MapUI maman)
         {
@@ -31,10 +32,11 @@ namespace WindowsFormsApplication1
             this.BackColor = Color.LightGreen;
             pos_x = x;
             pos_y = y;
-           
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.registerMatrix);
-            
+
             motherMap = maman;
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(motherMap.mother.registerMatrix);
+            
+            
         }
 
 
@@ -99,18 +101,7 @@ namespace WindowsFormsApplication1
             return 0xFFFFFF;
         }
 
-        private void registerMatrix(object sender, MouseEventArgs e)
-        {
-            if (e.Button == System.Windows.Forms.MouseButtons.Left)
-            {
-                MapButton but = (MapButton)sender;
-                char butc = but.colorToString();
-                motherMap.setMatrixXY(pos_x, pos_y, butc);
-                motherMap.clearTiles();
-            }
-
-        }
-
+        
         public int getPosX()
         {
             return pos_y;

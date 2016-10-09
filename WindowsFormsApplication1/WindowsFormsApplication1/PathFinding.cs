@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Threading;
+using System.Threading;
 using System.Windows.Forms;
 using PathfindingLib;
 using PathfindingLib.MapSolution;
@@ -20,8 +22,32 @@ namespace WindowsFormsApplication1
 
         public const int MAX_MAP_HEIGHT = 15;
         public const int MAX_MAP_LENGHT = 22;
-        char[,] map1 = new char[10, 10];
-        char[,] map2 = new char[20, 10];
+        private bool drawingInProgress = false;
+
+        public const string DEFAULT_MAP_10_10 = 
+            "..  XX   .\n" + 
+            "*.  *X  *.\n" + 
+            " .  XX ...\n" + 
+            " .* X *.* \n" + 
+            " ...=...  \n" + 
+            " .* X     \n" + 
+            " .  XXX*  \n" + 
+            " .  * =   \n" + 
+            " .... XX  \n" + 
+            "   *.  X* ";
+
+        public const string DEFAULT_MAP_20_10 = 
+            "...*     X .*    *  \n" +
+            " *..*   *X .........\n" + 
+            "   .     =   *.*  *.\n" + 
+            "  *.   * XXXX .    .\n" + 
+            "XXX=XX   X *XX=XXX*.\n" + 
+            "  *.*X   =  X*.  X  \n" + 
+            "   . X * X  X . *X* \n" + 
+            "*  .*XX=XX *X . XXXX\n" + 
+            " ....  .... X . X   \n" + 
+            " . *....* . X*. = * ";
+
         Graphics graphics;
         private string result;
         public PathFinding() 
@@ -29,6 +55,17 @@ namespace WindowsFormsApplication1
             graphics = this.CreateGraphics();
             InitializeComponent();
             this.MinimumSize = new Size(800, 600);
+        }
+
+        private void UIWait(int ms)
+        {
+            var frame = new DispatcherFrame();
+            new Thread((ThreadStart)(() =>
+            {
+                Thread.Sleep(ms);
+                frame.Continue = false;
+            })).Start();
+            Dispatcher.PushFrame(frame);
         }
 
 
@@ -41,11 +78,11 @@ namespace WindowsFormsApplication1
             }
             if (str == "")
             {
-                this.mapUserInterface = new MapUI(length, height);
+                this.mapUserInterface = new MapUI(this,length, height);
             }
             else
             {
-                this.mapUserInterface = new MapUI(length, height, str);
+                this.mapUserInterface = new MapUI(this,length, height, str);
             }
             int pos_x = (this.Width - mapUserInterface.Width) / 2;
             this.mapUserInterface.Location = new System.Drawing.Point(pos_x, 100);
@@ -73,40 +110,18 @@ namespace WindowsFormsApplication1
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            String mapStr = "..  XX   .\n"
-                          + "*.  *X  *.\n"
-                          + " .  XX ...\n"
-                          + " .* X *.* \n"
-                          + " ...=...  \n"
-                          + " .* X     \n"
-                          + " .  XXX*  \n"
-                          + " .  * =   \n"
-                          + " .... XX  \n"
-                          + "   *.  X* ";
-            generateMap(10, 10, mapStr);
+            generateMap(10, 10, PathFinding.DEFAULT_MAP_10_10);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            String mapStr = "...*     X .*    *  \n"
-                   + " *..*   *X .........\n"
-                   + "   .     =   *.*  *.\n"
-                   + "  *.   * XXXX .    .\n"
-                   + "XXX=XX   X *XX=XXX*.\n"
-                   + "  *.*X   =  X*.  X  \n"
-                   + "   . X * X  X . *X* \n"
-                   + "*  .*XX=XX *X . XXXX\n"
-                   + " ....  .... X . X   \n"
-                   + " . *....* . X*. = * ";
-            generateMap(20, 10, mapStr);
+            generateMap(20, 10, PathFinding.DEFAULT_MAP_20_10);
         }
-
-       
-
 
 
         private void DrawPath(Map map)
         {
+            drawingInProgress = true;
             MapButton end = mapUserInterface.getMapButtonsList()[0, 1];
             LinkedList<int[]> list = map.ReconstructPathList();
             if (list.Count == 1)
@@ -121,18 +136,23 @@ namespace WindowsFormsApplication1
             {
                 MapButton tile = mapUserInterface.getMapButtonsList()[i[1], i[0]];
                 mapUserInterface.pushTile(tile);
-                System.Threading.Thread.Sleep(250);
+                UIWait(250);
                 cost += tile.colorToCost();
                 costLabel.Text = "Cost : " + cost;
                 this.Refresh();
             }
-            System.Threading.Thread.Sleep(250);
+            UIWait(250);
             cost += mapUserInterface.getEndPoint().colorToCost();
             costLabel.Text = "Cost : " + cost;
             this.Refresh();
+            drawingInProgress = false;
         }
         private void validate01_Click(object sender, EventArgs e)
         {
+            if (drawingInProgress)
+            {
+                return;
+            }
             Map myMap = new Map(mapUserInterface.getMatrix(), 
                 (int)numericUpDownYStart.Value - 1, 
                 (int)numericUpDownXStart.Value - 1,
@@ -303,6 +323,42 @@ namespace WindowsFormsApplication1
                         nud.Value = mapUserInterface.getEndPoint().getPosY() + 1;
                     }
                 }
+            }
+        }
+
+        public void registerMatrix(object sender, MouseEventArgs e)
+        {
+            if (drawingInProgress)
+            {
+                return;
+            }
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                MapButton but = (MapButton)sender;
+                
+                var c = but.BackColor.ToKnownColor();
+                switch (c)
+                {
+                    case KnownColor.LightGreen:
+                        but.BackColor = Color.DarkOrange;
+                        break;
+                    case KnownColor.DarkOrange:
+                        but.BackColor = Color.Blue;
+                        break;
+                    case KnownColor.Blue:
+                        but.BackColor = Color.Green;
+                        break;
+                    case KnownColor.Green:
+                        but.BackColor = Color.Gray;
+                        break;
+                    case KnownColor.Gray:
+                        but.BackColor = Color.LightGreen;
+                        break;
+                }
+
+                char butc = but.colorToString();
+                mapUserInterface.setMatrixXY(but.getPosY(), but.getPosX(), butc);
+                mapUserInterface.clearTiles();
             }
         }
 

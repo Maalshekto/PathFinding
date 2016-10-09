@@ -43,6 +43,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Executor.cs" />
@@ -50,9 +51,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="MapButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SwithButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="PathFinding.cs">

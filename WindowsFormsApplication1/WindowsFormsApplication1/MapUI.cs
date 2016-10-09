@@ -18,11 +18,11 @@ namespace WindowsFormsApplication1
 
         private MapButton[,] mapButtonsList;
         char[,] matrix;
-        private int p1;
-        private int p2;
-        public MapUI(int l, int h)
-        {
 
+        public PathFinding mother { get; set; }
+        public MapUI(PathFinding mum, int l, int h)
+        {
+            mother = mum;
             height = h;
             length = l;
             if (h <= 0 || l <= 0)
@@ -54,9 +54,9 @@ namespace WindowsFormsApplication1
             this.Visible = false;
         }
 
-        public MapUI(int l, int h, string val_init)
+        public MapUI(PathFinding mom, int l, int h, string val_init)
         {
-
+            mother = mom;
             height = h;
             length = l;
             if (h <= 0 || l <= 0)
