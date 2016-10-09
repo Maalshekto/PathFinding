@@ -95,6 +95,16 @@ namespace WindowsFormsApplication1
             simpleSound.Play();
         }
 
+        private void playReadySound()
+        {
+            string errorSound = @"\sound\FootmanReady1.wav";
+
+            Random rnd = new Random();
+            string sound = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + errorSound;
+            SoundPlayer simpleSound = new SoundPlayer(sound);
+            simpleSound.Play();
+        }
+
 
 
         private void generateMap(int length, int height, String str)
@@ -167,7 +177,7 @@ namespace WindowsFormsApplication1
                 this.Refresh();
                 
             }
-            
+            playReadySound();
             drawingInProgress = false;
         }
 
